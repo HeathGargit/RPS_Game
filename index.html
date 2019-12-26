@@ -1,0 +1,28 @@
+<html>
+    <title>Rock, Paper, Scissors</title>
+    <head>
+        <link rel="stylesheet" type="text/css" href="layout.css">
+        <script type="text/javascript" src="RPS_GameElements.js"></script>
+        <script>
+            function ProcessGame() {
+                var computerSelection = ComputerPlay();
+                var playerSelection = document.getElementById("PlayerSelection").value;
+                document.getElementById("MainArea").innerHTML = "Computer Chooses: " + computerSelection + "<br>You chose: " + playerSelection;
+                document.getElementById("ResultArea").innerHTML = ProcessRound(playerSelection, computerSelection);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Rock, Paper, Scissors</h1>
+        Your Selection: 
+        <select id="PlayerSelection">
+            <option value="rock">rock</option>
+            <option value="paper">paper</option>
+            <option value="scissors">scissors</option>
+        </select>
+        <br>
+        <button onclick="ProcessGame()">Play!</button>
+        <p id="MainArea"></p>
+        <p id="ResultArea"></p>
+    </body>
+</html>
